@@ -392,8 +392,6 @@ impl CalculateResult {
             }) => Self {
                 mode: 3,
                 pp,
-                ppAcc: Some(pp_acc),
-                ppStrain: Some(pp_strain),
                 stars: difficulty.stars,
                 nCircles: Some(map.n_circles as usize),
                 nSliders: Some(map.n_sliders as usize),
@@ -449,8 +447,6 @@ impl CalculateResult {
             }) => Self {
                 mode: 1,
                 pp,
-                ppAcc: Some(pp_acc),
-                ppStrain: Some(pp_strain),
                 stars: difficulty.stars,
                 maxCombo: Some(difficulty.max_combo),
                 nCircles: Some(map.n_circles as usize),
@@ -513,7 +509,9 @@ impl ScoreParams {
         let ScoreParams {
             mode,
             mods,
+            n320,
             n300,
+            n200,
             n100,
             n50,
             n_misses,
