@@ -389,7 +389,7 @@ impl CalculateResult {
                 pp,
                 pp_acc,
                 pp_strain,
-                difficulty,
+                pp_difficulty,
             }) => Self {
                 mode: 3,
                 pp,
@@ -413,7 +413,8 @@ impl CalculateResult {
                 pp_aim,
                 pp_flashlight,
                 pp_speed,
-                difficulty,
+                pp_difficulty,
+                effective_miss_count,
             }) => Self {
                 mode: 0,
                 pp,
@@ -444,7 +445,7 @@ impl CalculateResult {
                 pp,
                 pp_acc,
                 pp_strain,
-                difficulty,
+                pp_difficulty,
             }) => Self {
                 mode: 1,
                 pp,
