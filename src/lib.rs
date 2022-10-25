@@ -178,7 +178,7 @@ struct Strains {
     #[pyo3(get, set)]
     rhythm: Option<Vec<f64>>,
     #[pyo3(get, set)]
-    staminaLeft: Option<Vec<f64>>,
+    stamina: Option<Vec<f64>>,
     #[pyo3(get, set)]
     staminaRight: Option<Vec<f64>>,
 
@@ -239,8 +239,7 @@ impl From<RosuStrains> for Strains {
                 sectionLength: strains.section_len,
                 color: Some(strains.color),
                 rhythm: Some(strains.rhythm),
-                staminaLeft: Some(strains.stamina_left),
-                staminaRight: Some(strains.stamina_right),
+                stamina: Some(strains.stamina),
                 ..Default::default()
             },
         }
@@ -424,9 +423,9 @@ impl CalculateResult {
                 ppSpeed: Some(pp_speed),
                 stars: difficulty.stars,
                 maxCombo: Some(difficulty.max_combo),
-                aimStrain: Some(difficulty.aim_strain),
-                speedStrain: Some(difficulty.speed_strain),
-                flashlightRating: Some(difficulty.flashlight_rating),
+                aimStrain: Some(difficulty.aim),
+                speedStrain: Some(difficulty.speed),
+                flashlightRating: Some(difficulty.flashlight),
                 sliderFactor: Some(difficulty.slider_factor),
                 nCircles: Some(difficulty.n_circles),
                 nSliders: Some(difficulty.n_sliders),
@@ -694,7 +693,7 @@ impl Display for Strains {
             self, s:
             color,
             rhythm,
-            staminaLeft,
+            stamina,
             staminaRight,
             aim,
             aimNoSliders,
