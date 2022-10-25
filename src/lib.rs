@@ -411,7 +411,6 @@ impl CalculateResult {
                 pp_flashlight,
                 pp_speed,
                 difficulty,
-                pp_difficulty,
                 effective_miss_count,
             }) => Self {
                 mode: 0,
