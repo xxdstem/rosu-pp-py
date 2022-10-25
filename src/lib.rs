@@ -441,6 +441,7 @@ impl CalculateResult {
             },
             PerformanceAttributes::Taiko(TaikoPerformanceAttributes {
                 pp,
+                pp_acc,
                 difficulty,
                 pp_difficulty,
                 effective_miss_count,
@@ -509,9 +510,7 @@ impl ScoreParams {
         let ScoreParams {
             mode,
             mods,
-            n320,
             n300,
-            n200,
             n100,
             n50,
             n_misses,
@@ -535,16 +534,9 @@ impl ScoreParams {
             calculator = calculator.mode(mode);
         }
 
-        if let Some(n320) = n320 {
-            calculator = calculator.n320(n320);
-        }
 
         if let Some(n300) = n300 {
             calculator = calculator.n300(n300);
-        }
-
-        if let Some(n200) = n200 {
-            calculator = calculator.n200(n200);
         }
 
         if let Some(n100) = n100 {
@@ -581,9 +573,9 @@ impl ScoreParams {
             calculator = calculator.accuracy(acc);
         }
 
-        if let Some(score) = score {
-            //calculator = calculator.score(score);
-        }
+        // if let Some(score) = score {
+        //     calculator = calculator.score(score);
+        // }
 
         calculator
     }
